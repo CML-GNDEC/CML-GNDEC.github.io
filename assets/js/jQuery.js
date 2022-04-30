@@ -27,6 +27,14 @@
 		});
 	});
 
+	function background_images() {
+		$('[data-background]').each(function () {
+			$(this).css({
+				'background-image': 'url(' + $(this).data('background') + ')'
+			});
+		});
+	}
+
 	//Hero Slider
 	$('.hero-slider').slick({
 		autoplay: true,
@@ -77,6 +85,10 @@
 		},200);
 	}
 
+	$(document).ready(function(){
+		
+	});
+
 	// venobox popup
 	$(document).ready(function () {
 		$('.venobox').venobox();
@@ -90,6 +102,70 @@
 				getDate();
 			});
 		});
+
+		var info = {
+			'Home': ['',true], 
+			'About': ['./a/about.html',false],
+			'Events': ['./a/events.html',false], 
+			'Contact': ['./a/contact.html',false]
+		};
+		var ele;
+		var ele_link;
+		$(".nav-link").each(function(){
+			// console.log("nana");
+				// console.log(this);
+			// if (this.text.toLowerCase() == $('#info').attr('data-pagetype').toLowerCase()){
+			$(this).click(function(){
+				console.log(this);
+				console.log($(this).attr('data-link'));
+
+				ele = $(this);
+				ele_link = $(this).attr('data-link');
+				console.log($('.'+ele_link).html());
+
+				if (info[ele_link][1] == false || $('.'+ele_link).html == ''){
+					console.log('here');
+					$('.'+ele_link).load(info[ele_link][0], function(responseTxt, statusTxt, jqXHR){
+						if(statusTxt == "success"){
+							$(".nav-link").each(function(){
+								// console.log($('.'+$(this).attr('data-link')));
+								// console.log($('.'+ele_link));
+								if ($(this).attr('data-link') != ele_link){
+									// console.log($('.'+$(this).attr('data-link')));
+									$('.'+$(this).attr('data-link')).hide();
+								}
+							});
+							$('.'+ele_link).show();
+							// alert("New content loaded successfully!");
+							info[ele_link][1] = true;
+							background_images();
+							$('#info').attr('data-pagetype',ele_link);
+							nav_handle();
+						}
+						if(statusTxt == "error"){
+							alert("Something went wrong!!!");
+						}
+					});
+				}
+				else{
+					console.log('here22');
+					// var show_this = $('.'+$(this).attr('data-link'));
+					$(".nav-link").each(function(){
+						// console.log($('.'+$(this).attr('data-link')));
+						// console.log($('.'+ele_link));
+						if ($(this).attr('data-link') != ele_link){
+							// console.log($('.'+$(this).attr('data-link')));
+							$('.'+$(this).attr('data-link')).hide();
+						}
+					});
+					$('.'+ele_link).show();
+					background_images();
+					$('#info').attr('data-pagetype',ele_link);
+					nav_handle();
+				}
+			});
+		});
+
 		$(function () {
 			
 		});
