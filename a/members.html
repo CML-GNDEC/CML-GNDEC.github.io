@@ -1,0 +1,180 @@
+{% load static %}
+{% static "images" as baseURL %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CML GNDEC</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <!-- aos -->
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+</head>
+
+<body style="background-color: #eaeae8;">
+  <!-- header -->
+  <div class="load" data-pagetype="" id="info"></div>   {#  changes (Added class load)#}
+    {% block Header %}
+    {% include "Header.html" %}
+    {% endblock %}
+{#  <div class="load" data-source="Header.html" w3-include-html="Header.html"></div>#}
+  <!-- /header -->
+
+  <!-- page title -->
+  <section class="page-title-section overlay" data-background="{% static 'images/backgrounds/8.png' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item h2 text-primary font-secondary">Members</li>
+            <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          </ul>
+          <!-- <p class="text-lighten">Providing a platform for holistic development and grooming students overall</p> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /page title -->
+
+  <!-- teachers and members start -->
+  <section>
+
+    <!-- Student core member start -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-12 mb-3">
+          <h2 class="section-title">Core Members</h2>
+        </div>
+        <!-- card1 -->
+      {% for i in Core_Members_data %}
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            {% if i.3 == "" or i.3 == None %}
+              <img class="img-fluid" src="{{ baseURL }}/members/NA.png">
+            {% else %}
+              <img class="img-fluid" src="{{ baseURL }}/{{ i.3 }}">
+            {% endif %}
+            </div>
+            <div class="team-content">
+              <h3 class="name">{{ i.0 }}</h3>
+              <h4 class="title">{{ i.1 }}</h4>
+            </div>
+            <ul class="social">
+              <li><a href="{{ i.7 }}" target="_blank" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="{{ i.6 }}" target="_blank"  class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="{{ i.4 }}" target="_blank"  class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="{{ i.5 }}" target="_blank"  class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="{{ i.8 }}" target="_blank"  class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+
+        </div>
+      {% endfor %}
+
+        <!-- card4 -->
+       </div> <!-- row end -->
+       <!-- Student core member end -->
+
+       <!-- Student subcore member start -->
+       <div class="row">
+        <div class="col-12 my-3">
+          <div class="d-flex align-items-center section-title justify-content-between">
+            <h2 class="mb-0 text-nowrap mr-3">Sub-Core Members</h2>
+            <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+{#            <div>#}
+{#              <a href="faculty.html" target=""><button class="btn btn-primary-outline" style="font-size: 15px;">See all</button></a>#}
+{#              <!-- <a href="#" target="_blank" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see all</a> -->#}
+{#            </div>#}
+          </div>
+        </div>
+
+
+      {% for i in Team_Leaders_data %}
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            {% if i.3 == "" %}
+              <img class="img-fluid" src="{{ baseURL }}/members/NA.png">
+            {% else %}
+              <img class="img-fluid" src="{{ baseURL }}/{{ i.3 }}">
+            {% endif %}
+            </div>
+            <div class="team-content">
+              <h3 class="name">{{ i.0 }}</h3>
+              <h4 class="title">{{ i.2 }}</h4>
+            </div>
+            <ul class="social">
+              <li><a href="{{ i.7 }}" target="_blank" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="{{ i.6 }}" target="_blank"  class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="{{ i.4 }}" target="_blank"  class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="{{ i.5 }}" target="_blank"  class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="{{ i.8 }}" target="_blank"  class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+
+
+        <!-- card4 -->
+       </div> <!-- row end-->
+       <!-- Student subcore member end -->
+
+  </div><!-- first container end -->
+
+
+  </section>
+  <!-- teachers and members start -->
+
+  
+
+  <!-- Footer -->
+{#  <div class="load" data-source="{% static 'footer.html'%}" w3-include-html="{% static 'footer.html' %}"></div>#}
+    {% block Footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+  <!-- /Footer -->
+
+  <!-- jQuery -->
+  <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+  <!-- Bootstrap JS -->
+  <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+  <!-- slick slider -->
+  <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+  <!-- aos -->
+  <script src="{% static 'plugins/aos/aos.js' %}"></script>
+  <!-- venobox popup -->
+  <script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+  <!-- filter -->
+  <script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+  <!-- Main Script -->
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/jQuery.js' %}"></script>
+</body>
+
+</html>

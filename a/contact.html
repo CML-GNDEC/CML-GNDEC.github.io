@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CML GNDEC</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <!-- aos -->
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+  <div class="load" data-pagetype="contact" id="info"></div>    {#  changes (Added class load)#}
+    {% block Header %}
+    {% include "Header.html" %}
+    {% endblock %}
+  {#  <div class="load" data-source="Header.html" w3-include-html="Header.html"></div>#}
+
+  <!-- page title -->
+  <section class="page-title-section overlay" data-background="{% static 'images/backgrounds/4.png' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item h2 text-primary font-secondary">Contact Us</a>
+            </li>
+            <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          </ul>
+          <p class="text-lighten">Fill this Contact form with any questions or inquiries. Our support team is always here to get back to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /page title -->
+
+  
+  <!-- contact -->
+  <section class="ftco-section">
+    <div class="container">
+        <!-- <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">Contact Form #03</h2>
+            </div>
+        </div> -->
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="myrow mb-5">
+                        <div class="col-md-3">
+                            <div class="dbox w-100 text-center">
+                        <a target="_blank" href="https://goo.gl/maps/8Wvv4y6sqj4WdiXJ6">
+                          <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fa fa-map-marker"></span>
+                          </div>
+                        </a>
+                        <div class="text">
+                        <p><span>Address</span><div class="colon">:</div> <a target="_blank" href="https://goo.gl/maps/8Wvv4y6sqj4WdiXJ6"> CML Office, Guru Nanak Dev Engineering College, Gill road, Ludhiana</a></p>
+                      </div>
+                  </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dbox w-100 text-center">
+                        <a href="tel://9888887314">
+                          <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fa fa-phone"></span>
+                          </div>
+                        </a>
+                        <div class="text">
+                        <p><span>Phone</span><div class="colon">:</div> <a target="_blank" href="tel://9888887314">+91 9888887314</a></p>
+                      </div>
+                  </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dbox w-100 text-center">
+                        <a href="mailto:cmlgndec@gmail.com">
+                          <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fa fa-envelope-o"></span>
+                          </div>
+                        </a>
+                        <div class="text">
+                        <p><span>Email</span><div class="colon">:</div><a target="_blank" href="mailto:cmlgndec@gmail.com">cmlgndec@gmail.com</a></p>
+                      </div>
+                  </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dbox w-100 text-center">
+                        <a target="_blank" href="https://linktr.ee/cmlgndec">
+                          <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fa fa-link"></span>
+                          </div>
+                        </a>
+                        <div class="text">
+                        <p><span>Social Handles</span><div class="colon">:</div> <a target="_blank" href="https://linktr.ee/cmlgndec">cmlgndec</a></p>
+                      </div>
+                  </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="wrap-contact100">
+                            <form class="contact100-form validate-form">
+                            <span class="contact100-form-title">
+                              Get in touch
+                            </span>
+
+                            <div class="wrap-input100 validate-input" data-validate = "Name is required">
+                              <input class="input100 c-inp" type="text" name="name" placeholder="Name">
+                              <span class="focus-input100"></span>
+                              <span class="symbol-input100">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                              </span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                              <input class="input100 c-inp" type="text" name="email" placeholder="Email">
+                              <span class="focus-input100"></span>
+                              <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                              </span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                              <textarea class="input100 c-inp" name="message" placeholder="Message"></textarea>
+                              <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="container-contact100-form-btn">
+                              <button class="contact100-form-btn">
+                                Send
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                        <!-- <div class="col-md-5 d-flex align-items-stretch">
+                            <div class="info-wrap w-100 p-5 img contact100-pic js-tilt" style="background-image: url(images/mail.png);">
+                  </div>
+                        </div> -->
+                        <div class="contact100-pic js-tilt" data-tilt>
+                            <img src="{% static 'images/mail1.png' %}" alt="IMG">
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- /contact -->
+  
+
+
+  <!-- Footer -->
+    {#  <div class="load" data-source="{% static 'footer.html'%}" w3-include-html="{% static 'footer.html' %}"></div>#}
+    {% block Footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+  <!-- /Footer -->
+
+    <!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+    <script >
+      $('.js-tilt').tilt({
+        scale: 1.1
+      })
+    </script>
+  <!--===============================================================================================-->
+    <script src="{% static 'js/script.js' %}"></script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-23581568-13');
+  </script>
+
+
+  <!-- jQuery -->
+  <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+  <!-- Bootstrap JS -->
+  <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+  <!-- slick slider -->
+  <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+  <!-- aos -->
+  <script src="{% static 'plugins/aos/aos.js' %}"></script>
+  <!-- venobox popup -->
+  <script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+  <!-- filter -->
+  <script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+  <!-- Main Script -->
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/jQuery.js' %}"></script>
+
+</body>
+
+</html>

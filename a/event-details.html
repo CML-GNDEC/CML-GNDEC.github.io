@@ -1,0 +1,148 @@
+{% load static %}
+{% static "images" as baseURL %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CML GNDEC</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <!-- aos -->
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+  <div class="load" data-pagetype="events" id="info"></div>    {#  changes (Added class load)#}
+    {% block Header %}
+    {% include "Header.html" %}
+    {% endblock %}
+{#  <div class="load" data-source="Header.html" w3-include-html="Header.html"></div>#}
+ 
+
+  <!-- page title -->
+  <section class="page-title-section overlay" data-background="{% static 'images/backgrounds/page-title.jpg' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="events.html">Events</a></li>
+            <li class="list-inline-item text-white h3 font-secondary nasted">Event Details</li>
+          </ul>
+          <p class="text-lighten"> A talk show "All our dreams can come true if we have the courage to pursue them.” Get
+            a sudden shift of motivation and touch the sky by mastering your mindset with boosting knowledge.
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /page title -->
+  
+  <!-- event single -->
+  <section class="section-sm event-details">
+    <div class="container">
+      <div class="row">
+        <h2 class="section-title">{{ Event_data.8 }}<br>
+        </h2>
+        <br>
+      <div class="row">
+        <div class=" col-md-6 pr-lg-5">
+          <div class="row mt-4">
+            <img src="{{ baseURL }}/{{ Event_data.1 }}" alt="event thumb" class="img-fluid">
+
+          </div>
+          <br>
+          <br>
+          <div class="row">
+            <ul class="list-inline ml-4">
+              <li class="list-inline-item mr-xl-5 mr-3 mb-3 mb-lg-0 mr-1">
+                <div class="d-flex">
+                  <i class="fa fa-calendar text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">DATE</h6>
+{#                    {% if Event_data.3 == "" or Event_data.3 == None %}#}
+{#                    <p class="mb-0">{{ Event_data.2 }} {{ Event_data.4 }}</p>#}
+{#                    {% else %}#}
+                    <p class="mb-0">{% if Event_data.2|stringformat:'i'|length_is:1 %}0{% endif %}{{ Event_data.2 }} {{ Event_data.3 }}, {{ Event_data.4 }}</p>
+{#                    {% endif %}#}
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0 ml-2">
+                <div class="d-flex">
+                  <i class="fa fa-clock-o text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">TIME</h6>
+                    <p class="mb-0">{{ Event_data.6 }}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-6 mt-4">
+          <h3>About Event</h3>
+          <p>{{ Event_data.9 }}
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- /event single -->
+ 
+ <!-- Footer -->
+{#  <div class="load" data-source="{% static 'footer.html'%}" w3-include-html="{% static 'footer.html' %}"></div>#}
+    {% block Footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+  <!-- /Footer -->
+
+  <!-- jQuery -->
+  <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+  <!-- Bootstrap JS -->
+  <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+  <!-- slick slider -->
+  <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+  <!-- aos -->
+  <script src="{% static 'plugins/aos/aos.js' %}"></script>
+  <!-- venobox popup -->
+  <script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+  <!-- filter -->
+  <script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+
+  <!-- Main Script -->
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/jQuery.js' %}"></script>
+
+</body>
+
+</html>
+
+
+

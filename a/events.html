@@ -1,0 +1,124 @@
+{% load static %}
+{% static "images" as baseURL %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CML GNDEC</title>
+
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <!-- aos -->
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+  <div class="load" data-pagetype="events" id="info"></div>    {#  changes (Added class load)#}
+    {% block Header %}
+    {% include "Header.html" %}
+    {% endblock %}
+{#  <div class="load" data-source="Header.html" w3-include-html="Header.html"></div>#}
+
+  <!-- page title -->
+  <section class="page-title-section overlay" data-background="{% static 'images/backgrounds/Events.png' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item h2 text-primary font-secondary">Events</li>
+            <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          </ul>
+          <p class="text-lighten">Center for multi-faceted learning keeps on conducting these type of events through out
+            session which will enhance your knowlegde,interpersonal skills and grow yourself more .</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /page title -->
+
+  <!-- courses -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <!-- event -->
+      {% for i in Event_data %}
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <a href="/Event/{{ forloop.counter }}/Details">
+            <div class="card  hover-shadow">
+              <div class="card-img position-relative">
+                <img class="card-img-top" src="{{ baseURL }}/{{ i.1 }}" alt="event thumb">
+{#                <div class="card-date"><span>1-6 </span><br>MAR 2021</div>#}
+{#                  {% if i.3 == "" or i.3 == None or i.2 == i.3 %}#}
+{#                <div class="card-date"><span>{% if i.2|stringformat:'i'|length_is:1 %}0{% endif %}{{ i.2 }}</span><br>{{ i.4 }}</div>#}
+{#                  {% else %}#}
+                <div class="card-date"><span>{% if i.2|stringformat:'i'|length_is:1 %}0{% endif %}{{ i.2 }}</span><br>{{ i.3 }}, {{ i.4 }}</div>
+{#                  {% endif %}#}
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- location -->
+
+              <p class="card-title"> {{ i.8 }}
+              </p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+
+      </div>
+    </div>
+  </section>
+  <!-- /courses -->
+
+ 
+   <!-- Footer -->
+{#  <div class="load" data-source="{% static 'footer.html'%}" w3-include-html="{% static 'footer.html' %}"></div>#}
+    {% block Footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+  <!-- /Footer -->
+
+  <!-- jQuery -->
+  <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+  <!-- Bootstrap JS -->
+  <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+  <!-- slick slider -->
+  <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+  <!-- aos -->
+  <script src="{% static 'plugins/aos/aos.js' %}"></script>
+  <!-- venobox popup -->
+  <script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+  <!-- filter -->
+  <script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+
+  <!-- Main Script -->
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/jQuery.js' %}"></script>
+
+</body>
+
+</html>

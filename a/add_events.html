@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CML GNDEC</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- * Plugins Needed for the Project * -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <!-- aos -->
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+  <div class="load" data-pagetype="" id="info"></div>    {#  changes (Added class load)#}
+    {% block Header %}
+    {% include "Header.html" %}
+    {% endblock %}
+  {#  <div class="load" data-source="Header.html" w3-include-html="Header.html"></div>#}
+
+
+
+
+    <!-- hero slider -->
+    <section class="hero-section overlay bg-cover" data-background="{%static 'images/banner/banner-1.jpg'%}">
+        <div class="cont">
+        <div class="container">
+          <div class="row ">
+              <div class="col-lg-10 mx-auto">
+                  <div class="card d-block mt-2 mx-auto p-4 bg-light">
+                      <div class="card-body bg-light">
+                          <div class="container">
+                              <form method = "POST" action="/Add-Event/" id="Add-Event-form" role="form" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                  <div class="controls">
+                                      <h2 class="mb-5" style="text-align: center;">Add Event here</h2>
+
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label for="form_eventname">Name of the Event *</label>
+                                                  <input id="form_eventname" type="text" name="Event_Name" class="form-control ad-inp" placeholder="Please enter event name here" required="required" data-error="Name of the Event is required.">
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label for="form_tagline">Tag Line of the Event *</label>
+                                                  <input id="form_tagline" type="text" name="Event_Tagline" class="form-control ad-inp" placeholder="Please enter event tagline here" required="required" data-error="Tag Line of the Event is required.">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label for="form_startdate">Date*</label>
+                                                  <input id="form_startdate" type="date" name="Event_Start_Date" class="form-control ad-inp" placeholder="Please enter start date *" required="required" data-error="Start date of the Event is required.">
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label for="form_starttime">Time*</label>
+                                                  <input id="form_starttime" type="time" name="Event_Start_Time" class="form-control ad-inp" placeholder="Please enter start time *" required="required" data-error="Start time of the event is required.">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label for="form_enddate">End Date</label>
+                                                  <input id="form_enddate" type="date" name="Event_End_Date" class="form-control ad-inp" placeholder="Please enter end date *">
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label for="form_endtime">End Time</label>
+                                                  <input id="form_starttime" type="time" name="Event_End_Time" class="form-control ad-inp" placeholder="Please enter end time *">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <div class="form-group" >
+                                                  <label for="form_image">Poster of the Event *</label>
+                                                  <input type="file" accept=".jpg,.jpeg, .png" name="Event_Image" required="required" data-error="Poster is required." class="form-control ad-inp">
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                              <div class="form-group">
+                                                  <label for="form_eventdescription">Event Description *</label>
+                                                  <textarea id="form_eventdescription" name="Event_Description" class="form-control ad-inp" placeholder="Write Event Description here." rows="4" required="required" data-error="Please, enter Event Description."></textarea>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-12">
+                                              <input type="submit" class="btn btn-success btn-send pt-2 btn-block"  value="Save">
+                                          </div>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div> <!-- /.8 -->
+              </div> <!-- /.row-->
+          </div>
+          </div>
+          <br>
+          <br>
+
+
+
+        </div>
+      </section>
+      <!-- /hero slider -->
+
+
+   <!-- Footer -->
+    {#  <div class="load" data-source="{% static 'footer.html'%}" w3-include-html="{% static 'footer.html' %}"></div>#}
+    {% block Footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+
+  <!-- /Footer -->
+
+    <!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+  <!--===============================================================================================-->
+    <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+    <script >
+      $('.js-tilt').tilt({
+        scale: 1.1
+      })
+    </script>
+  <!--===============================================================================================-->
+    <script src="{% static 'js/script.js' %}"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+
+
+  <!-- jQuery -->
+  <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+  <!-- Bootstrap JS -->
+  <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+  <!-- slick slider -->
+  <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+  <!-- aos -->
+  <script src="{% static 'plugins/aos/aos.js' %}"></script>
+  <!-- venobox popup -->
+  <script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+  <!-- filter -->
+  <script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+  <!-- Main Script -->
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/jQuery.js' %}"></script>
+
+</body>
+
+</html>
