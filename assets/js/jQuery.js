@@ -85,9 +85,85 @@
 		},200);
 	}
 
-	$(document).ready(function(){
-		
+
+	var ele;
+	var ele_link;
+	var info = {
+		'Home': ['',true, ''], 
+		'About': ['./a/about.html',false,'#a'],
+		'Events': ['./a/events.html',false, '#e'], 
+		'Contact': ['./a/contact.html',false, '#c'],
+	};
+
+	function handle_pageload(element){
+		ele = element;
+		ele_link = element.attr('data-link');
+		console.log($('.'+ele_link).html());
+
+		if (info[ele_link][1] == false || $('.'+ele_link).html == ''){
+			console.log('here');
+			$('.'+ele_link).load(info[ele_link][0], function(responseTxt, statusTxt, jqXHR){
+				if(statusTxt == "success"){
+					$(".nav-link").each(function(){
+						// console.log($('.'+$(this).attr('data-link')));
+						// console.log($('.'+ele_link));
+						if ($(this).attr('data-link') != ele_link){
+							// console.log($('.'+$(this).attr('data-link')));
+							$('.'+$(this).attr('data-link')).hide();
+						}
+					});
+					$('.'+ele_link).show();
+					// alert("New content loaded successfully!");
+					info[ele_link][1] = true;
+					background_images();
+					$('#info').attr('data-pagetype',ele_link);
+					nav_handle();
+					history.pushState(null, null, info[ele_link][2]);
+				}
+				if(statusTxt == "error"){
+					alert("Something went wrong!!!");
+				}
+			});
+		}
+		else{
+			console.log('here22');
+			// var show_this = $('.'+$(this).attr('data-link'));
+			$(".nav-link").each(function(){
+				// console.log($('.'+$(this).attr('data-link')));
+				// console.log($('.'+ele_link));
+				if ($(this).attr('data-link') != ele_link){
+					// console.log($('.'+$(this).attr('data-link')));
+					$('.'+$(this).attr('data-link')).hide();
+				}
+			});
+			$('.'+ele_link).show();
+			background_images();
+			$('#info').attr('data-pagetype',ele_link);
+			nav_handle();
+			history.pushState(null, null, info[ele_link][2]);
+		}
+	}
+
+	window.addEventListener('hashchange', function(){
+		var url_hash = window.location.hash;
+		for(var key in info) {
+			console.log("he",key);
+			if (url_hash == info[key][2]){
+				handle_pageload($('[data-link="'+key+'"]'));
+			}
+		};
 	});
+
+	$(window).on('load', function () {
+		var url_hash = window.location.hash;
+		for(var key in info) {
+			console.log("he",key);
+			if (url_hash == info[key][2]){
+				handle_pageload($('[data-link="'+key+'"]'));
+			}
+		};
+	});
+
 
 	// venobox popup
 	$(document).ready(function () {
@@ -103,66 +179,12 @@
 			});
 		});
 
-		var info = {
-			'Home': ['',true], 
-			'About': ['./a/about.html',false],
-			'Events': ['./a/events.html',false], 
-			'Contact': ['./a/contact.html',false]
-		};
-		var ele;
-		var ele_link;
+		
 		$(".nav-link").each(function(){
-			// console.log("nana");
-				// console.log(this);
-			// if (this.text.toLowerCase() == $('#info').attr('data-pagetype').toLowerCase()){
 			$(this).click(function(){
 				console.log(this);
 				console.log($(this).attr('data-link'));
-
-				ele = $(this);
-				ele_link = $(this).attr('data-link');
-				console.log($('.'+ele_link).html());
-
-				if (info[ele_link][1] == false || $('.'+ele_link).html == ''){
-					console.log('here');
-					$('.'+ele_link).load(info[ele_link][0], function(responseTxt, statusTxt, jqXHR){
-						if(statusTxt == "success"){
-							$(".nav-link").each(function(){
-								// console.log($('.'+$(this).attr('data-link')));
-								// console.log($('.'+ele_link));
-								if ($(this).attr('data-link') != ele_link){
-									// console.log($('.'+$(this).attr('data-link')));
-									$('.'+$(this).attr('data-link')).hide();
-								}
-							});
-							$('.'+ele_link).show();
-							// alert("New content loaded successfully!");
-							info[ele_link][1] = true;
-							background_images();
-							$('#info').attr('data-pagetype',ele_link);
-							nav_handle();
-						}
-						if(statusTxt == "error"){
-							alert("Something went wrong!!!");
-						}
-					});
-				}
-				else{
-					console.log('here22');
-					// var show_this = $('.'+$(this).attr('data-link'));
-					$(".nav-link").each(function(){
-						// console.log($('.'+$(this).attr('data-link')));
-						// console.log($('.'+ele_link));
-						if ($(this).attr('data-link') != ele_link){
-							// console.log($('.'+$(this).attr('data-link')));
-							$('.'+$(this).attr('data-link')).hide();
-						}
-					});
-					$('.'+ele_link).show();
-					background_images();
-					$('#info').attr('data-pagetype',ele_link);
-					nav_handle();
-				}
+				handle_pageload($(this));
 			});
 		});
 
