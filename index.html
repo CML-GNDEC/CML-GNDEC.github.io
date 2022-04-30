@@ -12,6 +12,7 @@
 
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
+  <script src="./assets/js/include.js"></script>
   <link rel="stylesheet" href="./assets/plugins/bootstrap/bootstrap.min.css">
   <!-- slick slider -->
   <link rel="stylesheet" href="./assets/plugins/slick/slick.css">
@@ -27,7 +28,6 @@
   <!-- Main Stylesheet -->
   <link href="./assets/css/footer.css" rel="stylesheet">
   <link href="./assets/css/style.css" rel="stylesheet">
-  <script src="./assets/js/include.js"></script>
 
 
   <!--Favicon-->
@@ -36,7 +36,39 @@
 </head>
 
 <body>
-  <div class="load" data-pagetype="home" id="info"></div>   
+  <div class="load" data-pagetype="home" id="info">
+    <header class="fixed-top header">
+      <div class="navigation w-100">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-dark p-0">
+            <a class="navbar-brand nav-logo" href="/">
+                <img src="./assets/images/cml_logo.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+              aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav ml-auto text-center">
+                <li class="nav-item @@home">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item @@about">
+                  <a class="nav-link" href="/About/">About</a>
+                </li>
+                <li class="nav-item @@events">
+                  <a class="nav-link" href="/Events/">EVENTS</a>
+                </li>
+                <li class="nav-item @@contact">
+                  <a class="nav-link" href="/Contact/">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>   
 
   <!-- hero slider -->
   <section class="hero-section overlay bg-cover" data-background="./assets/images/banner/banner-1.jpg">
