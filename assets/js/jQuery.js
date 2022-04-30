@@ -68,7 +68,8 @@
 				});
 			}
 			catch(e){
-			nav_handle();
+				console.log('trying...')
+				nav_handle();
 			}
 		},200);
 	}
