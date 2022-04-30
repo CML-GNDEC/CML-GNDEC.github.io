@@ -86,9 +86,7 @@
 					$(this).load(this.dataset.source);
 				}
 				catch (e){ }
-				console.log('now');
 				nav_handle();
-				console.log('pass');
 				getDate();
 			});
 		});
