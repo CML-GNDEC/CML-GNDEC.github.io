@@ -89,7 +89,7 @@
 	var ele;
 	var ele_link;
 	var info = {
-		'Home': ['',true, ''], 
+		'Home': ['',true, '#'], 
 		'About': ['./a/about.html',false,'#a'],
 		'Events': ['./a/events.html',false, '#e'], 
 		'Contact': ['./a/contact.html',false, '#c'],
