@@ -90,9 +90,9 @@
 	var ele_link;
 	var info = {
 		'Home': ['',true, '#'], 
-		'About': ['./a/about.html',false,'#a'],
-		'Events': ['./a/events.html',false, '#e'], 
-		'Contact': ['./a/contact.html',false, '#c'],
+		'About': ['./a/about.html',false,'#About'],
+		'Events': ['./a/events.html',false, '/Events'], 
+		'Contact': ['./a/contact.html',false, '/Contact'],
 	};
 
 	function handle_pageload(element){
