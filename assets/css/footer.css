@@ -232,8 +232,10 @@ p {
 
 .dk-footer-form {
   position: relative; }
-  .dk-footer-form input[type=email] {
+  .dk-footer-form input[type=email].form-control {
     color: #adadad;
+    height: auto;
+    font-size: initial;
     padding: 14px 28px;
     border-radius: 50px;
     background: #2E2E2E;

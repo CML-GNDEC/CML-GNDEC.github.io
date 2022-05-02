@@ -88,17 +88,19 @@
 
 	var ele;
 	var ele_link;
+	var url_hash;
 	var info = {
-		'Home': ['',true, '#'], 
+		'Home': ['',true, ''], 
 		'About': ['./a/about.html',false,'#About'],
-		'Events': ['./a/events.html',false, '/Events'], 
-		'Contact': ['./a/contact.html',false, '/Contact'],
+		'Events': ['./a/events.html',false, '#Events'], 
+		'Contact': ['./a/contact.html',false, '#Contact'],
 	};
 
 	function handle_pageload(element){
+		console.log("fsdsdsd",element);
 		ele = element;
 		ele_link = element.attr('data-link');
-		console.log($('.'+ele_link).html());
+		// console.log($('.'+ele_link).html());
 
 		if (info[ele_link][1] == false || $('.'+ele_link).html == ''){
 			console.log('here');
@@ -118,7 +120,10 @@
 					background_images();
 					$('#info').attr('data-pagetype',ele_link);
 					nav_handle();
-					history.pushState(null, null, info[ele_link][2]);
+					url_hash = window.location.hash;
+					if (url_hash != info[ele_link][2]){
+						history.pushState(null, null, info[ele_link][2]);
+					}
 				}
 				if(statusTxt == "error"){
 					alert("Something went wrong!!!");
@@ -140,25 +145,45 @@
 			background_images();
 			$('#info').attr('data-pagetype',ele_link);
 			nav_handle();
-			history.pushState(null, null, info[ele_link][2]);
+			url_hash = window.location.hash;
+			if (url_hash != info[ele_link][2]){
+				history.pushState(null, null, info[ele_link][2]);
+			}
 		}
 	}
 
 	window.addEventListener('hashchange', function(){
-		var url_hash = window.location.hash;
+		url_hash = window.location.hash;
 		for(var key in info) {
-			console.log("he",key);
 			if (url_hash == info[key][2]){
 				handle_pageload($('[data-link="'+key+'"]'));
 			}
 		};
+		if (url_hash == ''){
+			handle_pageload($('[data-link="Home"]'));
+			if (url_hash != ''){
+				history.pushState(null, null, '/');
+			}
+		}
 	});
 
-	$(window).on('load', function () {
-		var url_hash = window.location.hash;
+	$(window).on('popstate', function() {
+		url_hash = window.location.hash;
 		for(var key in info) {
-			console.log("he",key);
 			if (url_hash == info[key][2]){
+				console.log("url_hash",url_hash);
+				console.log("info[key][2]",info[key][2]);
+				handle_pageload($('[data-link="'+key+'"]'));
+			}
+		};
+	  });
+
+	$(window).on('load', function () {
+		url_hash = window.location.hash;
+		for(var key in info) {
+			if (url_hash == info[key][2]){
+				console.log("url_hash",url_hash);
+				console.log("info[key][2]",info[key][2]);
 				handle_pageload($('[data-link="'+key+'"]'));
 			}
 		};
@@ -184,6 +209,9 @@
 			$(this).click(function(){
 				console.log(this);
 				console.log($(this).attr('data-link'));
+				if (url_hash != ''){
+					history.pushState(null, null, '/');
+				}
 				handle_pageload($(this));
 			});
 		});
