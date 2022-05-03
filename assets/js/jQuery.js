@@ -86,108 +86,108 @@
 	}
 
 
-	var ele;
-	var ele_link;
-	var url_hash;
-	var info = {
-		'Home': ['',true, ''], 
-		'About': ['./a/about.html',false,'#About'],
-		'Events': ['./a/events.html',false, '#Events'], 
-		'Contact': ['./a/contact.html',false, '#Contact'],
-	};
+	// var ele;
+	// var ele_link;
+	// var url_hash;
+	// var info = {
+	// 	'Home': ['',true, ''], 
+	// 	'About': ['./a/about.html',false,'#About'],
+	// 	'Events': ['./a/events.html',false, '#Events'], 
+	// 	'Contact': ['./a/contact.html',false, '#Contact'],
+	// };
 
-	function handle_pageload(element){
-		console.log("fsdsdsd",element);
-		ele = element;
-		ele_link = element.attr('data-link');
-		// console.log($('.'+ele_link).html());
+	// function handle_pageload(element){
+	// 	console.log("fsdsdsd",element);
+	// 	ele = element;
+	// 	ele_link = element.attr('data-link');
+	// 	// console.log($('.'+ele_link).html());
 
-		if (info[ele_link][1] == false || $('.'+ele_link).html == ''){
-			console.log('here');
-			$('.'+ele_link).load(info[ele_link][0], function(responseTxt, statusTxt, jqXHR){
-				if(statusTxt == "success"){
-					$(".nav-link").each(function(){
-						// console.log($('.'+$(this).attr('data-link')));
-						// console.log($('.'+ele_link));
-						if ($(this).attr('data-link') != ele_link){
-							// console.log($('.'+$(this).attr('data-link')));
-							$('.'+$(this).attr('data-link')).hide();
-						}
-					});
-					$('.'+ele_link).show();
-					// alert("New content loaded successfully!");
-					info[ele_link][1] = true;
-					background_images();
-					$('#info').attr('data-pagetype',ele_link);
-					nav_handle();
-					url_hash = window.location.hash;
-					if (url_hash != info[ele_link][2]){
-						history.pushState(null, null, info[ele_link][2]);
-					}
-				}
-				if(statusTxt == "error"){
-					alert("Something went wrong!!!");
-				}
-			});
-		}
-		else{
-			console.log('here22');
-			// var show_this = $('.'+$(this).attr('data-link'));
-			$(".nav-link").each(function(){
-				// console.log($('.'+$(this).attr('data-link')));
-				// console.log($('.'+ele_link));
-				if ($(this).attr('data-link') != ele_link){
-					// console.log($('.'+$(this).attr('data-link')));
-					$('.'+$(this).attr('data-link')).hide();
-				}
-			});
-			$('.'+ele_link).show();
-			background_images();
-			$('#info').attr('data-pagetype',ele_link);
-			nav_handle();
-			url_hash = window.location.hash;
-			if (url_hash != info[ele_link][2]){
-				history.pushState(null, null, info[ele_link][2]);
-			}
-		}
-	}
+	// 	if (info[ele_link][1] == false || $('.'+ele_link).html == ''){
+	// 		console.log('here');
+	// 		$('.'+ele_link).load(info[ele_link][0], function(responseTxt, statusTxt, jqXHR){
+	// 			if(statusTxt == "success"){
+	// 				$(".nav-link").each(function(){
+	// 					// console.log($('.'+$(this).attr('data-link')));
+	// 					// console.log($('.'+ele_link));
+	// 					if ($(this).attr('data-link') != ele_link){
+	// 						// console.log($('.'+$(this).attr('data-link')));
+	// 						$('.'+$(this).attr('data-link')).hide();
+	// 					}
+	// 				});
+	// 				$('.'+ele_link).show();
+	// 				// alert("New content loaded successfully!");
+	// 				info[ele_link][1] = true;
+	// 				background_images();
+	// 				$('#info').attr('data-pagetype',ele_link);
+	// 				nav_handle();
+	// 				url_hash = window.location.hash;
+	// 				if (url_hash != info[ele_link][2]){
+	// 					history.pushState(null, null, info[ele_link][2]);
+	// 				}
+	// 			}
+	// 			if(statusTxt == "error"){
+	// 				alert("Something went wrong!!!");
+	// 			}
+	// 		});
+	// 	}
+	// 	else{
+	// 		console.log('here22');
+	// 		// var show_this = $('.'+$(this).attr('data-link'));
+	// 		$(".nav-link").each(function(){
+	// 			// console.log($('.'+$(this).attr('data-link')));
+	// 			// console.log($('.'+ele_link));
+	// 			if ($(this).attr('data-link') != ele_link){
+	// 				// console.log($('.'+$(this).attr('data-link')));
+	// 				$('.'+$(this).attr('data-link')).hide();
+	// 			}
+	// 		});
+	// 		$('.'+ele_link).show();
+	// 		background_images();
+	// 		$('#info').attr('data-pagetype',ele_link);
+	// 		nav_handle();
+	// 		url_hash = window.location.hash;
+	// 		if (url_hash != info[ele_link][2]){
+	// 			history.pushState(null, null, info[ele_link][2]);
+	// 		}
+	// 	}
+	// }
 
-	window.addEventListener('hashchange', function(){
-		url_hash = window.location.hash;
-		for(var key in info) {
-			if (url_hash == info[key][2]){
-				handle_pageload($('[data-link="'+key+'"]'));
-			}
-		};
-		if (url_hash == ''){
-			handle_pageload($('[data-link="Home"]'));
-			if (url_hash != ''){
-				history.pushState(null, null, '/');
-			}
-		}
-	});
+	// window.addEventListener('hashchange', function(){
+	// 	url_hash = window.location.hash;
+	// 	for(var key in info) {
+	// 		if (url_hash == info[key][2]){
+	// 			handle_pageload($('[data-link="'+key+'"]'));
+	// 		}
+	// 	};
+	// 	if (url_hash == ''){
+	// 		handle_pageload($('[data-link="Home"]'));
+	// 		if (url_hash != ''){
+	// 			history.pushState(null, null, '/');
+	// 		}
+	// 	}
+	// });
 
-	$(window).on('popstate', function() {
-		url_hash = window.location.hash;
-		for(var key in info) {
-			if (url_hash == info[key][2]){
-				console.log("url_hash",url_hash);
-				console.log("info[key][2]",info[key][2]);
-				handle_pageload($('[data-link="'+key+'"]'));
-			}
-		};
-	  });
+	// $(window).on('popstate', function() {
+	// 	url_hash = window.location.hash;
+	// 	for(var key in info) {
+	// 		if (url_hash == info[key][2]){
+	// 			console.log("url_hash",url_hash);
+	// 			console.log("info[key][2]",info[key][2]);
+	// 			handle_pageload($('[data-link="'+key+'"]'));
+	// 		}
+	// 	};
+	//   });
 
-	$(window).on('load', function () {
-		url_hash = window.location.hash;
-		for(var key in info) {
-			if (url_hash == info[key][2]){
-				console.log("url_hash",url_hash);
-				console.log("info[key][2]",info[key][2]);
-				handle_pageload($('[data-link="'+key+'"]'));
-			}
-		};
-	});
+	// $(window).on('load', function () {
+	// 	url_hash = window.location.hash;
+	// 	for(var key in info) {
+	// 		if (url_hash == info[key][2]){
+	// 			console.log("url_hash",url_hash);
+	// 			console.log("info[key][2]",info[key][2]);
+	// 			handle_pageload($('[data-link="'+key+'"]'));
+	// 		}
+	// 	};
+	// });
 
 
 	// venobox popup
@@ -205,16 +205,16 @@
 		});
 
 		
-		$(".nav-link").each(function(){
-			$(this).click(function(){
-				console.log(this);
-				console.log($(this).attr('data-link'));
-				if (url_hash != ''){
-					history.pushState(null, null, '/');
-				}
-				handle_pageload($(this));
-			});
-		});
+		// $(".nav-link").each(function(){
+		// 	$(this).click(function(){
+		// 		console.log(this);
+		// 		console.log($(this).attr('data-link'));
+		// 		if (url_hash != ''){
+		// 			history.pushState(null, null, '/');
+		// 		}
+		// 		handle_pageload($(this));
+		// 	});
+		// });
 
 		$(function () {
 			
