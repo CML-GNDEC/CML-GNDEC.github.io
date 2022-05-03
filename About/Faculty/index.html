@@ -1,5 +1,4 @@
-{% load static %}
-{% static "images" as baseURL %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,40 +12,67 @@
 
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- <script src="/assets/js/include.js"></script> -->
+  <link rel="stylesheet" href="/assets/plugins/bootstrap/bootstrap.min.css">
   <!-- slick slider -->
-  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="/assets/plugins/slick/slick.css">
   <!-- themefy-icon -->
-  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="/assets/plugins/themify-icons/themify-icons.css">
   <!-- animation css -->
-  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <link rel="stylesheet" href="/assets/plugins/animate/animate.css">
   <!-- aos -->
-  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <link rel="stylesheet" href="/assets/plugins/aos/aos.css">
   <!-- venobox popup -->
-  <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+  <link rel="stylesheet" href="/assets/plugins/venobox/venobox.css">
 
   <!-- Main Stylesheet -->
-  <link href="{% static 'css/footer.css' %}" rel="stylesheet">
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="/assets/css/footer.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
   <!--Favicon-->
-  <link rel="shortcut icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
-  <link rel="icon" href="{% static 'images/cmlfavicon.png' %}" type="image/x-icon">
-
+  <link rel="shortcut icon" href="/assets/images/cmlfavicon.png" type="image/x-icon">
+  <link rel="icon" href="/assets/images/cmlfavicon.png" type="image/x-icon">
 </head>
 
 <body style="background-color: #eaeae8;">
-    <!-- header -->
-  <div class="load" data-pagetype="" id="info"></div>   {#  changes (Added class load)#}
-    {% block Header %}
-    {% include "Header.html" %}
-    {% endblock %}
-{#  <div class="load" data-source="Header.html" w3-include-html="Header.html"></div>#}
-  <!-- /header -->
+  <div class="load" data-pagetype="about" id="info">
+    <header class="fixed-top header">
+      <div class="navigation w-100">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-dark p-0">
+            <a class="navbar-brand nav-logo" href="/">
+                <img src="/assets/images/cml_logo.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+              aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav ml-auto text-center">
+                <li class="nav-item @@home">
+                  <a class="nav-link" href="/" data-link="Home">Home</a>
+                </li>
+                <li class="nav-item @@about">
+                  <a class="nav-link" href="../" data-link="About">About</a>
+                </li>
+                <li class="nav-item @@events">
+                  <a class="nav-link" href="/Events/" data-link="Events">EVENTS</a>
+                </li>
+                <li class="nav-item @@contact">
+                  <a class="nav-link" href="/Contact/" data-link="Contact">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>  
 
   <!-- page title -->
-  <section class="page-title-section overlay" data-background="{% static 'images/backgrounds/Faculty.png' %}">
+  <section class="page-title-section overlay" data-background="/assets/images/backgrounds/Faculty.png">
     <div class="container">
       <div class="row">
         <div class="col-md-8">
@@ -66,7 +92,7 @@
     <div class="container my-5">
       <div class="row">
         <!-- card1 -->
-      {% for i in Teachers_data %}
+      <!-- {% for i in Teachers_data %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-4">
           <div class="our-team">
             <div class="picture">
@@ -89,9 +115,368 @@
             </ul>
           </div>
         </div>
-      {% endfor %}
-
+      {% endfor %} -->
+        <!-- card1 -->
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/Narwant.jpg">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Dr. Narwant Singh Grewal</h3>
+              <h4 class="title">Officer Incharge</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/Lakhveer.jpg">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Prof. Lakhveer Singh</h3>
+              <h4 class="title">Officer Incharge</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/Shivmanmeet.jpg">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Prof. Shivmanmeet Singh</h3>
+              <h4 class="title">Coordinator Student Club</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Mr. Dharuv Chandar Pant</h3>
+              <h4 class="title">Ministerial Staff</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Er. Harjit Singh</h3>
+              <h4 class="title">Technical Support</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Mr. Varinderjit Singh</h3>
+              <h4 class="title">Supporting Staff</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Mr. Sukhwinder Singh</h3>
+              <h4 class="title">Supporting Staff</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Er. Manpreet Singh Sidhu</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Er. Charanjeet Singh</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Er. Shailja</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Er. Arshpreet Kaur</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Er. Samreet Kaur</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Dr. Rajvir Kaur</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Dr. Navneet Kaur</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Dr. Amit Kamra</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Ms. Mandeep Kaur Khosa</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+          <div class="our-team">
+            <div class="picture">
+            
+              <img class="img-fluid" src="/assets/images/faculty/NA.png">
+            
+            </div>
+            <div class="team-content">
+              <h3 class="name">Ar. Navjot Kaur</h3>
+              <h4 class="title">Executive Committee</h4>
+            </div>
+            <ul class="social">
+              <li><a href="#" class="fa fa-envelope-o" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-instagram" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-facebook-f" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-twitter" aria-hidden="true"></a></li>
+              <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+
     </div>
   </section>
   <!-- teachers and members start -->
@@ -99,27 +484,218 @@
   
 
   <!-- Footer -->
-{#  <div class="load" data-source="{% static 'footer.html'%}" w3-include-html="{% static 'footer.html' %}"></div>#}
-    {% block Footer %}
-    {% include "footer.html" %}
-    {% endblock %}
-  <!-- /Footer -->
+  <div class="fetch-footer"></div>
+  <!--Important link source from https://bootsnipp.com/snippets/ooa9M-->
+  <!------ Include the above in your HEAD tag ---------->
+  
+  <footer id="dk-footer" class="dk-footer">
+      <div class="f-container">
+          <div class="row m-0">
+              <div class="col-md-12 col-lg-4 p-0">
+                  <div class="dk-footer-box-info">
+                      <a href="/" class="footer-logo">
+                          <img src="/assets/images/cml_logo.png" alt="footer_logo" class="img-fluid-f">
+                          <img src="/assets/images/logogne.png" alt="footer_logo" class="img-fluid-f1">
+                      </a>
+                      <p class="footer-info-text">
+                          Center For Multi-Faceted Learning,
+                          Guru Nanak Dev Engineering College, Ludhiana
+                      </p>
+                      <div class="footer-social-link">
+                          <h3>Follow us</h3>
+                          <ul>
+                              <li>
+                                  <a href="#" target="_blank">
+                                      <i class="fa fa-envelope"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.facebook.com/CMLGNDEC" target="_blank">
+                                      <i class="fa fa-facebook"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.youtube.com/channel/UCgfkZOFLDzOKBRLA-vRQBQA" target="_blank">
+                                      <i class="fa fa-youtube-play"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.linkedin.com/company/cmlgndec" target="_blank">
+                                      <i class="fa fa-linkedin"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://www.instagram.com/cmlgndec/" target="_blank">
+                                      <i class="fa fa-instagram"></i>
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+                      <!-- End Social link -->
+                  </div>
+                  <!-- End Footer info -->
+                  <div class="footer-awarad">
+                      <p></p>
+                  </div>
+              </div>
+              <!-- End Col -->
+              <br>
+                      <br>
+              <div class="col-md-12 col-lg-8 align-self-center">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="contact-us">
+                              <div class="contact-icon">
+                                  <i class="fa fa-map-o" aria-hidden="true"></i>
+                              </div>
+                              <!-- End contact Icon -->
+                              <div class="contact-info">
+                                  <h3>CML Office</h3>
+                                  <p>GNDEC</p>
+                              </div>
+                              <!-- End Contact Info -->
+                          </div>
+                          <!-- End Contact Us -->
+                      </div>
+                      <!-- End Col -->
 
-  <!-- jQuery -->
-  <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
-  <!-- Bootstrap JS -->
-  <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
-  <!-- slick slider -->
-  <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
-  <!-- aos -->
-  <script src="{% static 'plugins/aos/aos.js' %}"></script>
-  <!-- venobox popup -->
-  <script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
-  <!-- filter -->
-  <script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
-  <!-- Main Script -->
-  <script src="{% static 'js/script.js' %}"></script>
-  <script src="{% static 'js/jQuery.js' %}"></script>
+                      <div class="col-md-6">
+                          <div class="contact-us contact-us-last">
+                              <div class="contact-icon">
+                                  <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                              </div>
+                              <!-- End contact Icon -->
+                              <div class="contact-info">
+                                  <h3>+91 98888 87314</h3>
+                                  <p>Give us a call</p>
+                              </div>
+                              <!-- End Contact Info -->
+                          </div>
+                          <!-- End Contact Us -->
+                      </div>
+                      <!-- End Col -->
+                  </div>
+                  <!-- End Contact Row -->
+                  <div class="row">
+                      <div class="col-md-12 col-lg-6">
+                          <div class="footer-widget footer-left-widget">
+                              <div class="section-heading">
+                                  <h3>Useful Links</h3>
+                                  <span class="animate-border border-black"></span>
+                              </div>
+                              <ul>
+                                  <li>
+                                      <a href="/">Home</a>
+                                  </li>
+                                  <li>
+                                      <a href="../">About</a>
+                                  </li>
+                                  <li>
+                                      <a href="/Events/">Events</a>
+                                  </li>
+                                  <li>
+                                      <a href="/Contact/">Contact</a>
+                                  </li>
+                              </ul>
+                              <ul>
+                                  <li>
+                                      <a href="./">Faculty</a>
+                                  </li>
+                                  <li>
+                                      <a href="../Members/">Members</a>
+                                  </li>
+                                  <li>
+                                      <a href="#">Web&nbsp;Developers</a>
+                                  </li>
+                                  <li>
+                                      <a href="#">FAQ</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <!-- End Footer Widget -->
+                      </div>
+                      <!-- End col -->
+                      <div class="col-md-12 col-lg-6 footer-subscribe">
+                          <div class="footer-widget">
+                              <div class="section-heading">
+                                  <h3>Subscribe</h3>
+                                  <span class="animate-border border-black"></span>
+                              </div>
+                              <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
+                                  Subscribe us to get further updates</p>
+                              <form action="#">
+                                  <div class="form-row">
+                                      <div class="col dk-footer-form">
+                                          <input type="email" class="form-control f-subscribe" placeholder="Email Address">
+                                          <button type="submit">
+                                              <i class="fa fa-send"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                              </form>
+                              <!-- End form -->
+                          </div>
+                          <!-- End footer widget -->
+                      </div>
+                      <!-- End Col -->
+                  </div>
+                  <!-- End Row -->
+              </div>
+              <!-- End Col -->
+          </div>
+          <!-- End Widget Row -->
+      </div>
+      <!-- End Contact Container -->
+
+
+      <div class="copyright">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                          <span>Copyright <span id="date"></span>
+              <script>
+                var CurrentYear = new Date().getFullYear();
+                document.getElementById('date').innerText = CurrentYear;
+              </script>
+              © CML GNDEC</span>
+                  </div>
+                  <!-- End col -->
+              </div>
+              <!-- End Row -->
+          </div>
+          <!-- End Copyright Container -->
+      </div>
+      <!-- End Copyright -->
+  </footer>
+
+<!-- /Footer -->
+
+
+  <!-- Back to top -->
+  <div id="back-to-top" class="back-to-top">
+    <button class="btn btn-dark" title="Back to Top" id="js-top">
+        <i class="fa fa-angle-up"></i>
+    </button>
+</div>
+<!-- End Back to top -->
+
+<!-- jQuery -->
+<script src="/assets/plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/assets/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="/assets/plugins/slick/slick.min.js"></script>
+<!-- aos -->
+<script src="/assets/plugins/aos/aos.js"></script>
+<!-- venobox popup -->
+<script src="/assets/plugins/venobox/venobox.min.js"></script>
+<!-- filter -->
+<script src="/assets/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<!-- Main Script --> 
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/jQuery.js"></script>
+
 
 </body>
 
