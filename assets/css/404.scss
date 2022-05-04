@@ -66,6 +66,9 @@ h2 {
   transition: 0.2s ease;
   font-weight: bold;
   margin: 5px 0px;
+  &.focus, &:focus {
+    box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .5)
+  }
   &.green {
     border: 3.5px solid var(--theme-color);
     color: var(--blue);

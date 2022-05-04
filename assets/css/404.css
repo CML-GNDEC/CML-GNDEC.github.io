@@ -84,6 +84,11 @@ h2 {
   margin: 5px 0px;
 }
 
+.btn.focus, .btn:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
+
 .btn.green {
   border: 3.5px solid var(--theme-color);
   color: var(--blue);
