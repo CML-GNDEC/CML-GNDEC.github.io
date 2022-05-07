@@ -6,6 +6,7 @@
 		$('.preloader').fadeOut(700);
 	});
 
+
 	// Sticky Menu
 	// $(window).scroll(function () {
 	// 	var height = $('.top-header').innerHeight();
@@ -202,8 +203,18 @@
 				nav_handle();
 				getDate();
 			});
+			// onimage load if error then replace with default image
+			
 		});
-
+		$(function () {
+			// $(".member-pic").each(function () {
+			// 	console.log($(this));	
+			// 		$(this).error(function(){
+			// 			console.log($(this).attr('data-default'));
+			// 			$(this).attr('src', $(this).attr('data-default'));
+			// 		});
+			// });
+		});
 		
 		// $(".nav-link").each(function(){
 		// 	$(this).click(function(){

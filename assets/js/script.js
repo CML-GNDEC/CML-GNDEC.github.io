@@ -1,3 +1,10 @@
+document.querySelectorAll(".member-pic").forEach(function (e) {
+    e.onerror = function () { 
+        // console.log(e.getAttribute('data-default'));
+        e.setAttribute('src', e.getAttribute('data-default'));
+        console.clear();
+    };
+});
 const scrollToTopButton = document.getElementById('js-top');
 const scrollFunc = () => {
     let y = window.scrollY;
