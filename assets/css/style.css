@@ -1092,6 +1092,12 @@ box-shadow: 0px 0px 26px -4px var(--light-themeColor);
 }
 /*modifications*/
 
+.card-img-top.about-us-img{
+    height: 280px;
+    /* opacity: 0.95; */
+    width: 280px;
+    -webkit-box-shadow: 0px 0px 26px -4px var(--light-themeColor);
+}
 
 .social .fa-envelope-o{
     transition: none;
