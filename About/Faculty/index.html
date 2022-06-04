@@ -37,6 +37,7 @@
 </head>
 
 <body style="background-color: #eaeae8;">
+  <div id="snackbar"></div>
   <div class="load" data-pagetype="about" id="info">
     <header class="fixed-top header">
       <div class="navigation w-100">
@@ -612,17 +613,16 @@
                                   <h3>Subscribe</h3>
                                   <span class="animate-border border-black"></span>
                               </div>
-                              <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
-                                  Subscribe us to get further updates</p>
-                              <form action="#">
-                                  <div class="form-row">
-                                      <div class="col dk-footer-form">
-                                          <input type="email" class="form-control f-subscribe" placeholder="Email Address">
-                                          <button type="submit">
-                                              <i class="fa fa-send"></i>
-                                          </button>
-                                      </div>
-                                  </div>
+                              <p>Subscribe us to get further updates</p>
+                              <form  action="https://formspree.io/f/mvollevw" method="POST" id="subscribe_form">
+                                <div class="form-row">
+                                    <div class="col dk-footer-form">
+                                        <input type="email" name="Email" class="form-control f-subscribe" placeholder="Email Address">
+                                        <button type="submit">
+                                            <i class="fa fa-send"></i>
+                                        </button>
+                                    </div>
+                                </div>
                               </form>
                               <!-- End form -->
                           </div>

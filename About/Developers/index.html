@@ -37,6 +37,7 @@
 </head>
 
 <body style="background-color: #eaeae8;">
+  <div id="snackbar"></div>
   <div class="load" data-pagetype="about" id="info">
     <header class="fixed-top header">
       <div class="navigation w-100">
@@ -72,12 +73,12 @@
   </div>  
 
   <!-- page title -->
-  <section class="page-title-section overlay" data-background="../../assets/images/backgrounds/8.png">
+  <section class="page-title-section overlay" data-background="../../assets/images/backgrounds/Developers.png">
     <div class="container">
       <div class="row">
         <div class="col-md-8">
           <ul class="list-inline custom-breadcrumb">
-            <li class="list-inline-item h2 text-primary font-secondary">Website Developers</li>
+            <li class="list-inline-item h2 text-primary font-secondary" style="visibility: hidden;">Website Developers</li>
             <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
           </ul>
           <!-- <p class="text-lighten">Providing a platform for holistic development and grooming students overall</p> -->
@@ -357,17 +358,16 @@
                                   <h3>Subscribe</h3>
                                   <span class="animate-border border-black"></span>
                               </div>
-                              <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
-                                  Subscribe us to get further updates</p>
-                              <form action="#">
-                                  <div class="form-row">
-                                      <div class="col dk-footer-form">
-                                          <input type="email" class="form-control f-subscribe" placeholder="Email Address">
-                                          <button type="submit">
-                                              <i class="fa fa-send"></i>
-                                          </button>
-                                      </div>
-                                  </div>
+                              <p>Subscribe us to get further updates</p>
+                              <form  action="https://formspree.io/f/mvollevw" method="POST" id="subscribe_form">
+                                <div class="form-row">
+                                    <div class="col dk-footer-form">
+                                        <input type="email" name="Email" class="form-control f-subscribe" placeholder="Email Address">
+                                        <button type="submit">
+                                            <i class="fa fa-send"></i>
+                                        </button>
+                                    </div>
+                                </div>
                               </form>
                               <!-- End form -->
                           </div>

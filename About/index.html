@@ -37,6 +37,7 @@
 </head>
 
 <body>
+  <div id="snackbar"></div>
   <div class="load" data-pagetype="about" id="info">
     <header class="fixed-top header">
       <div class="navigation w-100">
@@ -169,7 +170,7 @@
 
         <div class="col-lg-4 col-md-6 col-sm-12 mb-sm-3 text-center">
         <div class="card team" >
-        <img class="card-img-top rounded-circle about-us-img" src="../assets/images/faculty/cmlteacher.jpg" alt="Card image">
+        <img class="card-img-top rounded-circle about-us-img" src="../assets/images/About/cmlteacher.jpg" alt="Card image">
         <div class="card-body mt-4">
           <!-- <div>
               <a href="#" target="_blank" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block" style="font-size: 20px;">Faculty</a>
@@ -183,7 +184,7 @@
 
       <div class="col-lg-4 col-md-6 col-sm-12 text-center">
       <div class="card team" >
-        <img class="card-img-top rounded-circle img-fluid about-us-img" src="../assets/images/members/cmlteam.jpg" alt="Card image">
+        <img class="card-img-top rounded-circle img-fluid about-us-img" src="../assets/images/About/cmlDevelopers.jpg" alt="Card image">
         <div class="card-body mt-4">
           <!-- <div>
               <a href="#" target="_blank" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block" style="font-size: 20px;">Members</a>
@@ -197,8 +198,8 @@
     </div>
 
       <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-      <div class="card team" >
-        <img class="card-img-top rounded-circle img-fluid about-us-img" src="../assets/images/members/cmlteam.jpg" alt="Card image">
+      <div class="card team">
+        <img class="card-img-top rounded-circle img-fluid about-us-img" src="../assets/images/About/cmlteam.jpg" alt="Card image">
         <div class="card-body mt-4">
           <!-- <div>
               <a href="#" target="_blank" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block" style="font-size: 20px;">Members</a>
@@ -365,17 +366,16 @@
                                   <h3>Subscribe</h3>
                                   <span class="animate-border border-black"></span>
                               </div>
-                              <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
-                                  Subscribe us to get further updates</p>
-                              <form action="#">
-                                  <div class="form-row">
-                                      <div class="col dk-footer-form">
-                                          <input type="email" class="form-control f-subscribe" placeholder="Email Address">
-                                          <button type="submit">
-                                              <i class="fa fa-send"></i>
-                                          </button>
-                                      </div>
-                                  </div>
+                              <p>Subscribe us to get further updates</p>
+                              <form  action="https://formspree.io/f/mvollevw" method="POST" id="subscribe_form">
+                                <div class="form-row">
+                                    <div class="col dk-footer-form">
+                                        <input type="email" name="Email" class="form-control f-subscribe" placeholder="Email Address">
+                                        <button type="submit">
+                                            <i class="fa fa-send"></i>
+                                        </button>
+                                    </div>
+                                </div>
                               </form>
                               <!-- End form -->
                           </div>

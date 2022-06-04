@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="./assets/plugins/venobox/venobox.css">
 
   <!-- Main Stylesheet -->
-  <link href="./assets/css/style.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
   <link href="./assets/css/footer.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
@@ -38,6 +38,7 @@
 </head>
 
 <body>
+  <div id="snackbar"></div>
   <div class="load" data-pagetype="home" id="info">
     <header class="fixed-top header">
       <div class="navigation w-100">
@@ -369,12 +370,11 @@
                                     <h3>Subscribe</h3>
                                     <span class="animate-border border-black"></span>
                                 </div>
-                                <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
-                                    Subscribe us to get further updates</p>
-                                <form action="#">
+                                <p>Subscribe us to get further updates</p>
+                                <form  action="https://formspree.io/f/mvollevw" method="POST" id="subscribe_form">
                                     <div class="form-row">
                                         <div class="col dk-footer-form">
-                                            <input type="email" class="form-control f-subscribe" placeholder="Email Address">
+                                            <input type="email" name="Email" class="form-control f-subscribe" placeholder="Email Address">
                                             <button type="submit">
                                                 <i class="fa fa-send"></i>
                                             </button>
