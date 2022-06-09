@@ -175,7 +175,7 @@ try{
       }
       if (data.get("message") == ""){
         document.querySelector('#message').setAttribute('required', '');
-        snackbar("Please fill type something in message");
+        snackbar("Please type something in message");
         return;
       }
       else{

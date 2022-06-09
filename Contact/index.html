@@ -156,7 +156,7 @@
                             <span class="contact100-form-title">Get in touch</span>
 
                             <div class="wrap-input100 validate-input" data-validate = "Name is required">
-                              <input class="input100 c-inp" type="text" name="Name" placeholder="Name">
+                              <input class="input100 c-inp" type="text" name="name" id="name" placeholder="Name" required>
                               <span class="focus-input100"></span>
                               <span class="symbol-input100">
                                 <i class="fa fa-user" aria-hidden="true"></i>
@@ -164,7 +164,7 @@
                             </div>
 
                             <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                              <input class="input100 c-inp" type="text" name="Email" placeholder="Email">
+                              <input class="input100 c-inp" type="text" name="email" id="email" placeholder="Email" required>
                               <span class="focus-input100"></span>
                               <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -172,7 +172,7 @@
                             </div>
 
                             <div class="wrap-input100 validate-input" data-validate = "Message is required">
-                              <textarea class="input100 c-inp" name="Message" placeholder="Message"></textarea>
+                              <textarea class="input100 c-inp" name="message" id="message" placeholder="Message" required></textarea>
                               <span class="focus-input100"></span>
                             </div>
 
@@ -351,7 +351,7 @@
                               <form  action="https://formspree.io/f/mvollevw" method="POST" id="subscribe_form">
                                 <div class="form-row">
                                     <div class="col dk-footer-form">
-                                        <input type="email" name="Email" class="form-control f-subscribe" placeholder="Email Address">
+                                        <input type="email" name="email" class="form-control f-subscribe" placeholder="Email Address" required>
                                         <button type="submit">
                                             <i class="fa fa-send"></i>
                                         </button>
