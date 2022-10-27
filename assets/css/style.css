@@ -1322,6 +1322,7 @@ link:focus,
 }
 
 .flip-card-back-content p {
+  line-height: 1.7;
   text-align: center;
   color: #45456e;
 }
@@ -1401,6 +1402,12 @@ link:focus,
   -webkit-box-shadow: 0px 0px 18px 2px rgba(79, 28, 41, 0.15);
   box-shadow: 0px 0px 18px 2px rgba(79, 28, 41, 0.15);
   /*/border:1px solid black;/*/
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: block;
 }
 
 .our-team.faculty {
@@ -1496,7 +1503,6 @@ link:focus,
 }
 
 .our-team .title {
-  display: block;
   font-size: 15px;
   color: #4e5052;
   text-transform: capitalize;
