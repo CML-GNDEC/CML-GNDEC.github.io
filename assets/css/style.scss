@@ -1,3 +1,4 @@
+/*! Minify style.css file using (https://www.toptal.com/developers/cssminifier) - Reduced file size from 42 KB to 28 KB */
 /*  typography */
 *{
     margin: 0;
@@ -32,7 +33,7 @@
 }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap');
 @font-face {
     font-family: 'futura-bold';
     src: url("../fonts/Futura-Bold.woff") format("woff");
@@ -1313,6 +1314,7 @@ link:focus,
     /* color: #b50000; */
 }
 .flip-card-back-content p{
+    line-height: 1.7;
     text-align: center;
     color: #45456e;
 }

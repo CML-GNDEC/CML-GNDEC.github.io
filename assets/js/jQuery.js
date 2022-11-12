@@ -2,9 +2,9 @@
 	'use strict';
 
 	// Preloader js    
-	$(window).on('load', function () {
-		$('.preloader').fadeOut(700);
-	});
+	// $(window).on('load', function () {
+	// 	$('.preloader').fadeOut(700);
+	// });
 
 
 	// Sticky Menu
@@ -36,20 +36,23 @@
 		});
 	}
 
-	//Hero Slider
-	$('.hero-slider').slick({
-		autoplay: true,
-		autoplaySpeed: 7500,
-		pauseOnFocus: false,
-		pauseOnHover: false,
-		infinite: true,
-		arrows: true,
-		fade: true,
-		prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-angle-left\'></i></button>',
-		nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-angle-right\'></i></button>',
-		dots: true
-	});
-	$('.hero-slider').slickAnimation();
+	// Hero Slider
+	try{
+		$('.hero-slider').slick({
+			autoplay: true,
+			autoplaySpeed: 7500,
+			pauseOnFocus: false,
+			pauseOnHover: false,
+			infinite: true,
+			arrows: true,
+			fade: true,
+			prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-angle-left\'></i></button>',
+			nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-angle-right\'></i></button>',
+			dots: true
+		});
+		$('.hero-slider').slickAnimation();
+	}
+	catch(e){}
 
 	function nav_handle(){
 		setTimeout(()=>{
@@ -193,7 +196,7 @@
 
 	// venobox popup
 	$(document).ready(function () {
-		$('.venobox').venobox();
+		try{$('.venobox').venobox();}catch(e){}
 		$(function () {
 			$(".load").each(function () {
 				try{
@@ -235,18 +238,18 @@
 
 
 	// filter
-	$(document).ready(function () {
-		var containerEl = document.querySelector('.filtr-container');
-		var filterizd;
-		if (containerEl) {
-			filterizd = $('.filtr-container').filterizr({});
-		}
-		//Active changer
-		$('.filter-controls li').on('click', function () {
-			$('.filter-controls li').removeClass('active');
-			$(this).addClass('active');
-		});
-	});
+	// $(document).ready(function () {
+	// 	// var containerEl = document.querySelector('.filtr-container');
+	// 	var filterizd;
+	// 	if (containerEl) {
+	// 		filterizd = $('.filtr-container').filterizr({});
+	// 	}
+	// 	//Active changer
+	// 	$('.filter-controls li').on('click', function () {
+	// 		$('.filter-controls li').removeClass('active');
+	// 		$(this).addClass('active');
+	// 	});
+	// });
 
 	//  Count Up
 	function counter() {
