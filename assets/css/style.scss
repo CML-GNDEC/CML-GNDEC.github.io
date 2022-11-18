@@ -6,16 +6,6 @@
     box-sizing: border-box;
 }
 :root{
-    /* --themeColor: #7B1FA2; */
-    /* --themeColor: #a52fd8; */
-    /* --themeColor: #d34b68; */
-    /* --themeColor: #be2c4c; */
-    /* --themeColor: #c9274a; */
-    /* --themeColor: #ad2e35; */
-    /*--themeColor: #3660c9;*/
-
-
-    /* --navColor: #7e69cdeb; */
     --navColor: #7560c4;
     --themeColor: rgb(93, 69, 191);
     --SecondaryColor: #182b45;
@@ -23,13 +13,6 @@
     --more-light-themeColor: #725dbd;
     --accent-themeColor: rgba(60, 20, 221, 0.644);
     --Selection-FontColor: rgb(255, 255, 255);
-
-    /* --themeColor: #c93656;
-    --SecondaryColor: #182b45;
-    --light-themeColor: #ce415f;     
-    --more-light-themeColor: #d6506d;   
-    --accent-themeColor: #cf153da6;
-    --Selection-FontColor: rgb(255, 255, 255); */
 }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
@@ -149,6 +132,17 @@
 
 
 body {
+    overscroll-behavior-y: none;
+    overflow-x: hidden !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -o-user-drag: none;
+    user-select: none;
     line-height: 1.2;
     font-family: "Poppins", sans-serif;
     -webkit-font-smoothing: antialiased;
